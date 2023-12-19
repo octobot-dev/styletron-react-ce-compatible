@@ -51,6 +51,7 @@ export const setupDevtoolsExtension = () => {
   };
 };
 
+import { cssToJsWorker } from 'css-to-js-sourcemap-worker';
 // todo: export debug engine interface
 export class BrowserDebugEngine {
   private worker: any;
@@ -59,7 +60,7 @@ export class BrowserDebugEngine {
     if (!worker) {
       const workerBlob = new Blob(
         [
-          `importScripts("https://unpkg.com/css-to-js-sourcemap-worker@2.0.5/worker.js")`,
+          cssToJsWorker,
         ],
         {type: "application/javascript"},
       );
