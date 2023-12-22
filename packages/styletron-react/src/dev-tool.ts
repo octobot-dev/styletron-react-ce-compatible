@@ -51,7 +51,6 @@ export const setupDevtoolsExtension = () => {
   };
 };
 
-// todo: export debug engine interface
 export class NoopDebugEngine {
   debug(): undefined {
     return;
